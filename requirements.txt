@@ -8,4 +8,5 @@ typing
 pickles
 logging
 streamlit
+mysql-connector-python
 -e .

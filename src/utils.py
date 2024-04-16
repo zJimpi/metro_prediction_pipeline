@@ -1,13 +1,33 @@
 import os 
 import sys 
+import csv
 import pickle 
+import mysql.connector
+
 from src.exception import CustomException
 from sklearn.metrics import r2_score
 from src.logger import logging
 
-#import data from sl
+#import data from sql
 def import_sqlData():
-    pass
+    mydb = mysql.connector.connect(host='localhost',user='root',password='',database='metro')
+    query = "select * from metro_data;"
+    mycursor= mydb.cursor()
+    mycursor.execute(query)
+    result= mycursor.fetchall()
+    
+    data_folder_path = "../data"
+    os.makedirs(data_folder_path, exist_ok=True)
+    file_path = os.path.join(data_folder_path, "metro.csv")
+
+    #func to convert dat stored in result to csv format
+    with open(file_path, "w", newline="") as csv_file:
+        csv_writer = csv.writer(csv_file)
+        csv_writer.writerow([i[0] for i in mycursor.description])  # for column headers
+        csv_writer.writerows(result) # for data
+
+
+
 
 # this file is sused by everyone
 def save_function(file_path, obj): 
