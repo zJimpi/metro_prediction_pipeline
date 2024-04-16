@@ -1,0 +1,11 @@
+pandas 
+numpy>=1.9.2 
+flask 
+scikit-learn
+seaborn
+datetime
+typing
+pickles
+logging
+streamlit
+-e .

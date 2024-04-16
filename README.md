@@ -23,7 +23,7 @@ This is to install the entire project as a package. Additionally, write a functi
 ```
 python setup.py install
 ```
-
+check if modules are imported if not then rerun step3 and 4
 
 ### Step5: Create a folder `src` 
 Include exception, logger, and utils python files. Make this folder as a package by including __init__.py file. The scr folder will include another folder with name components will be created. Include __init__.py also 
