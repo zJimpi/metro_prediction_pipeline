@@ -1,5 +1,5 @@
 pandas 
-numpy>=1.9.2 
+numpy
 flask 
 scikit-learn
 seaborn
@@ -7,6 +7,5 @@ datetime
 typing
 pickles
 logging
-streamlit
 mysql-connector-python
 -e .
