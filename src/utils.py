@@ -5,8 +5,10 @@ import pickle
 import mysql.connector
 
 from src.exception import CustomException
-from sklearn.metrics import r2_score
 from src.logger import logging
+from sklearn.metrics import accuracy_score
+
+
 
 #import data from sql
 def import_sqlData():
@@ -45,8 +47,9 @@ def model_performance(X_train, y_train, X_test, y_test, models):
             model.fit(X_train, y_train)
             # Test data
             y_test_pred = model.predict(X_test)
-            #R2 Score 
-            test_model_score = r2_score(y_test, y_test_pred)
+            #acuracy Score 
+            test_model_score = accuracy_score(y_test, y_test_pred) 
+           
             report[list(models.keys())[i]] = test_model_score
         return report
 
