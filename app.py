@@ -15,21 +15,25 @@ def predict_datapoint():
         return render_template("form.html")
     else: 
         data = CustomData(
-            TP2 = float(request.form['TP2']),
-            TP3 = float(request.form['TP3']),
-            H1 = float(request.form['H1']),
-            Dv_pressure = float(request.form['DV_pressure']),
-            Reservoirs = float(request.form['Reservoirs']),
-            Oil_temperature = float(request.form['Oil_temperature']),
-            Motor_current = float(request.form['Motor_current']),
-            COMP = float(request.form['COMP']),
-            Dv_electric = float(request.form['DV_eletric']),
-            Towers = float(request.form['Towers']),
-            MPG = float(request.form['MPG']),
-            LPS = float(request.form['LPS']),
-            Pressure_switch = float(request.form['Pressure_switch']),
-            Oil_level = float(request.form['Oil_level'])
+            TP2 = float(request.form.get('TP2')),
+            TP3 = float(request.form.get('TP3')),
+            H1 = float(request.form.get('H1')),
+            DV_pressure = float(request.form.get('DV_pressure')),
+            Reservoirs = float(request.form.get('Reservoirs')),
+            Oil_temperature = float(request.form.get('Oil_temperature')),
+            Motor_current = float(request.form.get('Motor_current')),
+            COMP = float(request.form.get('COMP')),
+            DV_eletric = float(request.form.get('DV_eletric')),
+            Towers = float(request.form.get('Towers')),
+            MPG = float(request.form.get('MPG')),
+            LPS = float(request.form.get('LPS')),
+            Pressure_switch = float(request.form.get('Pressure_switch')),
+            Oil_level = float(request.form.get('Oil_level'))
+            
         )
+
+    
+
     new_data = data.get_data_as_dataframe()
     predict_pipeline = PredictPipeline()
     pred = predict_pipeline.predict(new_data)
