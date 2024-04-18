@@ -1,11 +1,3 @@
 pandas 
-numpy
 flask 
-scikit-learn
-seaborn
-datetime
-typing
-pickles
-logging
-mysql-connector-python
 -e .
