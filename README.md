@@ -29,9 +29,22 @@ Include exception, logger, and utils python files. Make this folder as a package
 ### Step 6 Create a folder `components`
 Include data_ingestion, data_transformation, model trainer, and __init_.py. These components are to be interconnected in future. 
 
-#### Step 7 Create a folder called `pipeline`
+### Step 7 Create a folder called `pipeline`
 Create two python files training_pipeline and prediction_pipeline with __init__.py folder
 
 
-#### Step8: import data from sql
+### Step 8: Import data from sql
 Write a function to import sql data in utils.py
+
+### Step 9: Complete your pipeline code
+write all the nessesary code for the pipleine
+
+### Step 10: runn app.py file and open browser to see the site
+```
+python app.py
+
+http://127.0.0.1:5000/
+```
+### Step 11: Deploy in cloud
+For vercel deployment make `vercel.json` and `package.json` file
+For debugging open up log   
