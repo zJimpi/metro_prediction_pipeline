@@ -1,6 +1,4 @@
 pandas 
 flask
 logging
-os
-sys 
 -e .
