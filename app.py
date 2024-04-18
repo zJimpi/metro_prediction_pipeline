@@ -37,8 +37,11 @@ def predict_datapoint():
     new_data = data.get_data_as_dataframe()
     predict_pipeline = PredictPipeline()
     pred = predict_pipeline.predict(new_data)
-
-    results = pred
+    
+    if pred[0]:
+        results = "Good System"
+    else:
+        results = "System failed"
 
     return render_template("results.html", final_result = results)
 
